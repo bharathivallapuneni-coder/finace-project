@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Finance Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Personal Finance Tracker</h1>
+  </header>
+  <main class="container">
+    <section class="form-section">
+      <h2>Add Expense</h2>
+      <form id="expenseForm">
+        <input type="text" id="description" placeholder="Description (e.g., Groceries)" required>
+        <input type="number" id="amount" placeholder="Amount" step="0.01" required>
+        <input type="text" id="category" placeholder="Category (e.g., Food)" required>
+        <input type="date" id="date" required>
+        <button type="submit">Add Expense</button>
+      </form>
+    </section>
+    <section class="filter-section">
+      <h2>Filter Expenses</h2>
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+      </select>
+    </section>
+    <section class="summary-section">
+      <h2>Summary</h2>
+      <p>Total Expenses: $<span id="total">0.00</span></p>
+      <p>Average Expense: $<span id="average">0.00</span></p>
+      <p>Number of Expenses: <span id="count">0</span></p>
+    </section>
+    <section class="expense-list-section">
+      <h2>Expense List</h2>
+      <div class="expense-list" id="expenseList"></div>
+    </section>
+    <section class="chart-section">
+      <h2>Spending Analysis</h2>
+      <div class="chart-container">
+        <canvas id="categoryChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="timeChart"></canvas>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
